@@ -5,9 +5,9 @@
 
 Name:           aribb24
 Version:        1.0.3
-Release:        1%{!?tag:.%{date}git%{shortcommit0}}%{?dist}
+Release:        2%{!?tag:.%{date}git%{shortcommit0}}%{?dist}
 Summary:        A library for ARIB STD-B24
-License:        LGPL-3.0
+License:        LGPL-3.0-only
 URL:            https://github.com/nkoriyama/%{name}
 
 %if 0%{?tag:1}
@@ -18,6 +18,7 @@ Source0:        %url/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
+BuildRequires:  gcc
 BuildRequires:  libtool
 BuildRequires:  libpng-devel
 
@@ -63,5 +64,8 @@ rm -fr %{buildroot}%{_docdir}/%{name}
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Thu Aug 29 2024 Simone Caronni <negativo17@gmail.com> - 1.0.3-2.20160216git5e9be27
+- Fix license identifier and build requirements.
+
 * Tue Aug 13 2024 Simone Caronni <negativo17@gmail.com> - 1.0.3-1.20160216git5e9be27
 - First build.
