@@ -4,8 +4,8 @@
 #global tag %{version}
 
 Name:           aribb24
-Version:        1.0.3
-Release:        2%{!?tag:.%{date}git%{shortcommit0}}%{?dist}
+Version:        1.0.3%{!?tag:.%{date}git%{shortcommit0}}
+Release:        3%{?dist}
 Summary:        A library for ARIB STD-B24
 License:        LGPL-3.0-only
 URL:            https://github.com/nkoriyama/%{name}
@@ -59,11 +59,14 @@ rm -fr %{buildroot}%{_docdir}/%{name}
 %{_libdir}/lib%{name}.so.0.0.0
 
 %files devel
-%{_includedir}/%{name}/*.h
+%{_includedir}/%{name}
 %{_libdir}/lib%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Tue Sep 10 2024 Simone Caronni <negativo17@gmail.com> - 1.0.3.20160216git5e9be27-3
+- Review fixes.
+
 * Thu Aug 29 2024 Simone Caronni <negativo17@gmail.com> - 1.0.3-2.20160216git5e9be27
 - Fix license identifier and build requirements.
 
